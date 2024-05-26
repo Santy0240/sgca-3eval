@@ -16,10 +16,9 @@ class pruebasdeconduccioncontroller extends Controller
      */
     public function index()
     {
-        $pruebasdeconduccion =DB::table('pruebasdeconduccion')
-        ->orderby('id_prueba')
+        $pruebasdeconducciones =DB::table('pruebasdeconduccion')
         ->get();
-        return json_encode(['pruebasdeconduccion'=>$pruebasdeconduccion]);
+        return json_encode(['pruebasdeconducciones'=>$pruebasdeconducciones]);
     }
 
     /**

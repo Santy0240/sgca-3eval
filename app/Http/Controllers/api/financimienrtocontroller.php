@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\financiamiento;
 use Illuminate\Support\Facades\DB;
 
-class financiamientocontroller extends Controller
+class financimienrtocontroller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +16,13 @@ class financiamientocontroller extends Controller
      */
     public function index()
     {
+        $financiamientos =DB::table('financiamiento')
+        ->get();
         $vehiculos =DB::table('vehiculos')
         ->orderby('marca')
         ->get();
-        return json_encode(['vehiculos'=>$vehiculos]);
+        
+        return json_encode(['financiamientos'=>$financiamientos,'vehiculos'=>$vehiculos]);
 
     }
 
